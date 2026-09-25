@@ -264,6 +264,19 @@
       font-size: 14.5px;
       line-height: 1.5;
     }
+    .gate + .gate { margin-top: -12px; }
+    .gate.is-ops {
+      background: var(--finti-blue-50);
+      border-color: var(--finti-blue-200);
+      border-left-color: var(--finti-blue-500);
+    }
+    .gate.is-ops .gate-icon { border-color: var(--finti-blue-200); }
+    .gate.is-ops .gate-icon svg { color: var(--finti-blue-600); }
+    .gate.is-ops h2 {
+      color: var(--finti-blue-800);
+      text-transform: none;
+    }
+    .gate.is-ops p { color: var(--finti-blue-800); }
 
     /* Purpose card */
     .purpose {
@@ -549,6 +562,16 @@
       <div>
         <h2>Hard gate</h2>
         <p>Dealers are <strong>not activated</strong> until every applicable lender has responded — <strong>Approve</strong> or <strong>Decline</strong>. Partial lender approvals do not unlock activation, rate-sheet send, or Live.</p>
+      </div>
+    </aside>
+
+    <aside class="gate is-ops" role="note" aria-label="Friday activations">
+      <div class="gate-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none"><rect x="3" y="4" width="18" height="18" rx="2" stroke="currentColor" stroke-width="2"/><path d="M16 2v4M8 2v4M3 10h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </div>
+      <div>
+        <h2>Friday activations (for now)</h2>
+        <p>For now (until operations scale): do not activate any dealer live to sell on a Friday.</p>
       </div>
     </aside>
 
