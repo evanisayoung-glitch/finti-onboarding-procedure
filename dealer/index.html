@@ -512,6 +512,265 @@
       body { background: white; }
       main { margin-top: 16px; }
     }
+
+    /* Prep before you apply — checklist */
+    .prep {
+      background: var(--surface-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-2xl);
+      padding: 24px 24px 20px;
+      margin: 8px 0 32px;
+      box-shadow: 0 4px 16px rgba(26,29,33,.04);
+    }
+    .prep-header {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 12px 16px;
+      margin-bottom: 14px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+    .prep-header h2 {
+      font-family: var(--font-brand);
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--text-heading);
+      letter-spacing: -0.015em;
+      margin: 0 0 6px;
+    }
+    .prep-kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--brand-primary);
+      margin-bottom: 8px;
+    }
+    .prep-lead {
+      margin: 0;
+      font-size: 14.5px;
+      color: var(--text-body);
+      max-width: 62ch;
+      line-height: 1.55;
+    }
+    .prep-turnaround {
+      background: var(--green-50);
+      border: 1px solid #B6E7C9;
+      color: #0E7A3F;
+      border-radius: var(--radius-xl);
+      padding: 10px 14px;
+      font-size: 13px;
+      font-weight: 600;
+      line-height: 1.4;
+      max-width: 220px;
+      flex: 0 0 auto;
+    }
+    .prep-how {
+      margin: 0 0 18px;
+      font-size: 13.5px;
+      color: var(--text-muted);
+    }
+    .prep-sections {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+    .prep-block {
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-xl);
+      padding: 14px 16px 12px;
+      background: var(--grey-25);
+    }
+    .prep-block.sunlight {
+      background: var(--finti-blue-50);
+      border-color: var(--finti-blue-200);
+    }
+    .prep-block h3 {
+      font-family: var(--font-brand);
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--text-heading);
+      margin: 0 0 10px;
+      letter-spacing: -0.01em;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .prep-block h3 .n {
+      display: inline-grid;
+      place-items: center;
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background: var(--brand-primary);
+      color: var(--text-on-brand);
+      font-size: 12px;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+    .prep-block.sunlight h3 .n {
+      background: var(--finti-blue-700);
+    }
+    .prep-note {
+      margin: 0 0 10px;
+      font-size: 13.5px;
+      color: var(--text-body);
+      line-height: 1.5;
+    }
+    .check-list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .check-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 14px;
+      color: var(--text-body);
+      line-height: 1.45;
+      padding: 6px 8px;
+      border-radius: var(--radius-md);
+      background: var(--white);
+      border: 1px solid var(--grey-100);
+    }
+    .check-list li label {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      cursor: pointer;
+      width: 100%;
+    }
+    .check-list input[type="checkbox"] {
+      appearance: none;
+      -webkit-appearance: none;
+      width: 18px;
+      height: 18px;
+      margin-top: 1px;
+      flex-shrink: 0;
+      border: 2px solid var(--slate-300);
+      border-radius: 4px;
+      background: var(--white);
+      cursor: pointer;
+      position: relative;
+    }
+    .check-list input[type="checkbox"]:checked {
+      background: var(--brand-primary);
+      border-color: var(--brand-primary);
+    }
+    .check-list input[type="checkbox"]:checked::after {
+      content: "";
+      position: absolute;
+      left: 4px;
+      top: 1px;
+      width: 5px;
+      height: 9px;
+      border: solid white;
+      border-width: 0 2px 2px 0;
+      transform: rotate(45deg);
+    }
+    .check-list input[type="checkbox"]:focus-visible {
+      outline: none;
+      box-shadow: var(--focus-ring);
+    }
+    .check-list li:has(input:checked) {
+      background: var(--finti-blue-50);
+      border-color: var(--finti-blue-100);
+      color: var(--finti-blue-800);
+    }
+    .fee-prompt {
+      margin: 4px 0 10px;
+      font-size: 14px;
+      color: var(--text-heading);
+      font-weight: 500;
+    }
+    .fee-line {
+      display: block;
+      width: 100%;
+      max-width: 320px;
+      border: none;
+      border-bottom: 2px dashed var(--grey-300);
+      background: transparent;
+      padding: 8px 4px;
+      font-size: 15px;
+      font-family: var(--font-ui);
+      color: var(--text-heading);
+    }
+    .fee-line:focus {
+      outline: none;
+      border-bottom-color: var(--brand-primary);
+    }
+    .refs-table-wrap {
+      overflow-x: auto;
+      margin-top: 12px;
+      -webkit-overflow-scrolling: touch;
+    }
+    .refs-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 12.5px;
+      min-width: 640px;
+      background: var(--white);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+    }
+    .refs-table th,
+    .refs-table td {
+      border: 1px solid var(--grey-200);
+      padding: 8px 10px;
+      text-align: left;
+      vertical-align: middle;
+    }
+    .refs-table th {
+      background: var(--finti-blue-50);
+      color: var(--finti-blue-800);
+      font-weight: 600;
+      font-size: 11.5px;
+      letter-spacing: 0.02em;
+    }
+    .refs-table td {
+      height: 36px;
+      color: var(--text-muted);
+    }
+    .refs-table td:first-child {
+      width: 32px;
+      text-align: center;
+      font-weight: 600;
+      color: var(--ink-700);
+      background: var(--grey-25);
+    }
+    .prep-close {
+      margin: 18px 0 0;
+      padding: 14px 16px;
+      background: var(--green-50);
+      border: 1px solid #B6E7C9;
+      border-radius: var(--radius-xl);
+      color: #0E7A3F;
+      font-size: 14.5px;
+      line-height: 1.5;
+    }
+    .prep-close strong { color: #0A5C2F; }
+    .docs a.jump {
+      color: #8A6400;
+      font-weight: 600;
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+    .docs a.jump:hover { color: #5C4A10; }
+
+    @media (max-width: 640px) {
+      .prep { padding: 18px 16px 16px; }
+      .prep-turnaround { max-width: none; width: 100%; }
+      .prep-block { padding: 12px; }
+    }
   </style>
 </head>
 <body>
@@ -551,7 +810,7 @@
       <div>
         <h2>Please upload all required documentation</h2>
         <p>In the Finti application, please provide <strong>all documentation necessary</strong> for the lenders you selected. Incomplete files slow lender review.</p>
-        <p>Use the <strong>prep checklist</strong> your rep sent (Dealer Application Ready Checklist) so every document and detail your application asks for is ready the first time.</p>
+        <p>Use the <a class="jump" href="#prep">prep checklist</a> below (Dealer Application Ready Checklist / Dealer onboarding) so every document and detail your application asks for is ready the first time.</p>
       </div>
     </aside>
 
@@ -569,6 +828,111 @@
       <div class="label">What this is</div>
       <p>Your side of the Finti onboarding journey — what you’ll do, what we’ll handle, and when you’re Live.</p>
     </div>
+
+
+    <section class="prep" id="prep" aria-labelledby="prep-title">
+      <div class="prep-header">
+        <div>
+          <div class="prep-kicker">Dealer onboarding</div>
+          <h2 id="prep-title">Prep before you apply</h2>
+          <p class="prep-lead"><strong>Line everything up before you open the app</strong> — once complete, typical turnaround is <strong>1–2 business days</strong>.</p>
+        </div>
+        <div class="prep-turnaround" role="note">Typical turnaround<br /><strong>1–2 business days</strong><br />once you’re ready</div>
+      </div>
+      <p class="prep-how"><strong>How to use:</strong> Follow sections <strong>1–6</strong>. Add the Sunlight bank-statements item only if Sunlight is selected.</p>
+
+      <div class="prep-sections">
+        <div class="prep-block">
+          <h3><span class="n" aria-hidden="true">1</span> General company &amp; owner info</h3>
+          <ul class="check-list">
+            <li><label><input type="checkbox" /> EIN</label></li>
+            <li><label><input type="checkbox" /> Company website</label></li>
+            <li><label><input type="checkbox" /> Main company phone</label></li>
+            <li><label><input type="checkbox" /> Applicant personal info (including SSN)</label></li>
+            <li><label><input type="checkbox" /> Every owner over <strong>10%</strong> — name, home address, SSN</label></li>
+          </ul>
+        </div>
+
+        <div class="prep-block">
+          <h3><span class="n" aria-hidden="true">2</span> Financial snapshot</h3>
+          <ul class="check-list">
+            <li><label><input type="checkbox" /> Gross sales (last fiscal year)</label></li>
+            <li><label><input type="checkbox" /> Average finance transaction size</label></li>
+            <li><label><input type="checkbox" /> Estimated annual finance sales</label></li>
+            <li><label><input type="checkbox" /> Other finance companies currently using</label></li>
+          </ul>
+        </div>
+
+        <div class="prep-block">
+          <h3><span class="n" aria-hidden="true">3</span> States &amp; licensing</h3>
+          <ul class="check-list">
+            <li><label><input type="checkbox" /> States your business is licensed in, and is actively working in</label></li>
+          </ul>
+        </div>
+
+        <div class="prep-block">
+          <h3><span class="n" aria-hidden="true">4</span> Three trade references (street address required) — suppliers first</h3>
+          <p class="prep-note">List <strong>suppliers first</strong>. Add your bank only if you do not have enough suppliers. For each reference, collect all six fields below.</p>
+          <ul class="check-list">
+            <li><label><input type="checkbox" /> Company name</label></li>
+            <li><label><input type="checkbox" /> Account number</label></li>
+            <li><label><input type="checkbox" /> Contact person</label></li>
+            <li><label><input type="checkbox" /> Contact email</label></li>
+            <li><label><input type="checkbox" /> Contact phone</label></li>
+            <li><label><input type="checkbox" /> <strong>Street address of that business</strong></label></li>
+          </ul>
+          <div class="refs-table-wrap" role="region" aria-label="Trade references table">
+            <table class="refs-table">
+              <thead>
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">Company</th>
+                  <th scope="col">Account #</th>
+                  <th scope="col">Contact</th>
+                  <th scope="col">Email</th>
+                  <th scope="col">Phone</th>
+                  <th scope="col">Street address</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td>1</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                <tr><td>2</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                <tr><td>3</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="prep-block">
+          <h3><span class="n" aria-hidden="true">5</span> Documents (all lenders)</h3>
+          <ul class="check-list">
+            <li><label><input type="checkbox" /> Voided check</label></li>
+            <li><label><input type="checkbox" /> Certificate of insurance</label></li>
+            <li><label><input type="checkbox" /> Workers’ compensation documentation</label></li>
+            <li><label><input type="checkbox" /> Contractor license registration</label></li>
+            <li><label><input type="checkbox" /> Sales agreement</label></li>
+          </ul>
+        </div>
+
+        <div class="prep-block">
+          <h3><span class="n" aria-hidden="true">6</span> Dealer fee</h3>
+          <p class="fee-prompt">What is the highest dealer fee (%) you can handle?</p>
+          <p class="prep-note">Write your answer here as a percent (e.g. 8%):</p>
+          <input class="fee-line" type="text" inputmode="decimal" placeholder="e.g. 8%" aria-label="Highest dealer fee as a percent" />
+        </div>
+
+        <div class="prep-block sunlight">
+          <h3><span class="n" aria-hidden="true">+</span> Sunlight Financial — Extra</h3>
+          <p class="prep-note">Only if Sunlight is one of your selected lenders:</p>
+          <ul class="check-list">
+            <li><label><input type="checkbox" /> Bank statements for the <strong>last two months</strong></label></li>
+          </ul>
+          <p class="prep-note" style="margin-top:10px;margin-bottom:0"><em>That’s the only Sunlight-only item.</em></p>
+        </div>
+      </div>
+
+      <p class="prep-close">Once you have all of this ready, we can typically turn your application around in <strong>1–2 business days</strong> — and it’ll be perfect.</p>
+    </section>
 
     <h2 class="section-title">Your journey</h2>
     <p class="section-sub">Six steps from first packet to Live. Your rep is with you the whole way.</p>
@@ -650,7 +1014,7 @@
     <section class="help" aria-labelledby="help-title">
       <h2 class="section-title" id="help-title">Questions?</h2>
       <p class="section-sub" style="margin-bottom:8px">Your Finti rep is your first point of contact.</p>
-      <p>They’ll send the prep checklist, help with the application, and keep you posted as lenders respond. Prefer email? Reach us through <a href="https://getfinti.com">getfinti.com</a>.</p>
+      <p>They’ll help with the application and keep you posted as lenders respond. The prep checklist is on this page under <a href="#prep">Prep before you apply</a>. Prefer email? Reach us through <a href="https://getfinti.com">getfinti.com</a>.</p>
     </section>
   </main>
 
