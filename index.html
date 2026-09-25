@@ -278,30 +278,55 @@
     }
     .gate.is-ops p { color: var(--finti-blue-800); }
 
-    /* Purpose card */
+    /* Purpose / principle callout */
     .purpose {
-      background: var(--surface-card);
-      border: 1px solid var(--border-subtle);
-      border-radius: var(--radius-2xl);
-      padding: 22px 24px;
-      margin-bottom: 32px;
-      box-shadow: 0 4px 16px rgba(26,29,33,.04);
+      background: var(--finti-charcoal);
+      border: 1.5px solid var(--finti-charcoal);
+      border-left: 4px solid var(--amber-400);
+      border-radius: var(--radius-xl);
+      padding: 18px 20px;
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 14px;
+      align-items: start;
+      box-shadow: 0 8px 24px rgba(26,29,33,.12);
+      margin-bottom: 16px;
     }
-    .purpose .label {
-      font-size: 11px;
+    .purpose-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      background: #2A2A2A;
+      border: 1px solid #3A3A3A;
+      display: grid;
+      place-items: center;
+      flex-shrink: 0;
+    }
+    .purpose-icon span {
+      font-family: var(--font-brand);
+      font-weight: 800;
+      font-size: 13px;
+      letter-spacing: -0.03em;
+      color: var(--amber-400);
+      line-height: 1;
+    }
+    .purpose h2 {
+      font-family: var(--font-brand);
+      font-size: 15px;
       font-weight: 700;
-      letter-spacing: 0.08em;
+      margin: 0 0 4px;
+      letter-spacing: 0.04em;
       text-transform: uppercase;
-      color: var(--brand-primary);
-      margin-bottom: 6px;
+      color: var(--amber-400);
     }
     .purpose p {
       margin: 0;
-      color: var(--text-heading);
-      font-size: 16px;
-      font-weight: 500;
+      font-size: 14.5px;
       line-height: 1.5;
+      color: rgba(255,255,255,.92);
     }
+    .purpose p + p { margin-top: 8px; }
+    .purpose strong { color: var(--white); font-weight: 700; }
 
     .section-title {
       font-family: var(--font-brand);
@@ -515,7 +540,7 @@
       .step-num { width: 40px; padding-top: 16px; }
       .step-num span { width: 32px; height: 32px; font-size: 13px; }
       .step-card { padding: 16px; }
-      .gate { grid-template-columns: 1fr; }
+      .gate, .purpose { grid-template-columns: 1fr; }
     }
 
     @media print {
@@ -556,6 +581,15 @@
   </section>
 
   <main id="procedure">
+    <aside class="purpose" role="note" aria-label="Purpose of the process">
+      <div class="purpose-icon" aria-hidden="true"><span>A+</span></div>
+      <div>
+        <h2>Purpose of the process</h2>
+        <p>The whole reason for this process is so our customers have a great experience from start to finish.</p>
+        <p>We don’t give special treatment to anyone. Everyone gets the same <strong>A+ service</strong> start to finish.</p>
+      </div>
+    </aside>
+
     <aside class="gate" role="note" aria-label="Hard gate">
       <div class="gate-icon" aria-hidden="true">
         <svg viewBox="0 0 24 24" fill="none"><path d="M12 9v4m0 4h.01M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -575,11 +609,6 @@
         <p>For now (until operations scale): do not activate any dealer live to sell on a Friday.</p>
       </div>
     </aside>
-
-    <div class="purpose">
-      <div class="label">Purpose</div>
-      <p>One shared playbook for Finti reps, MoM, Brittany, Shawn, and corporate — so every dealer gets the same path from packet to Live.</p>
-    </div>
 
     <h2 class="section-title">The procedure</h2>
     <p class="section-sub">Follow in order. Each step shows who owns it.</p>
