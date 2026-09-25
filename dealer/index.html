@@ -675,10 +675,9 @@
       font-size: 14px;
       color: var(--text-body);
       line-height: 1.45;
-      padding: 6px 8px;
-      border-radius: var(--radius-md);
-      background: var(--white);
-      border: 1px solid var(--grey-100);
+      padding: 4px 0;
+      background: transparent;
+      border: none;
     }
     .check-list li label {
       display: flex;
@@ -720,70 +719,12 @@
       box-shadow: var(--focus-ring);
     }
     .check-list li:has(input:checked) {
-      background: var(--finti-blue-50);
-      border-color: var(--finti-blue-100);
       color: var(--finti-blue-800);
     }
-    .fee-prompt {
-      margin: 4px 0 10px;
-      font-size: 14px;
-      color: var(--text-heading);
-      font-weight: 500;
-    }
-    .fee-line {
-      display: block;
-      width: 100%;
-      max-width: 320px;
-      border: none;
-      border-bottom: 2px dashed var(--grey-300);
-      background: transparent;
-      padding: 8px 4px;
-      font-size: 15px;
-      font-family: var(--font-ui);
-      color: var(--text-heading);
-    }
-    .fee-line:focus {
-      outline: none;
-      border-bottom-color: var(--brand-primary);
-    }
-    .refs-table-wrap {
-      overflow-x: auto;
-      margin-top: 12px;
-      -webkit-overflow-scrolling: touch;
-    }
-    .refs-table {
-      width: 100%;
-      border-collapse: collapse;
-      font-size: 12.5px;
-      min-width: 640px;
-      background: var(--white);
-      border-radius: var(--radius-md);
-      overflow: hidden;
-    }
-    .refs-table th,
-    .refs-table td {
-      border: 1px solid var(--grey-200);
-      padding: 8px 10px;
-      text-align: left;
-      vertical-align: middle;
-    }
-    .refs-table th {
-      background: var(--finti-blue-50);
-      color: var(--finti-blue-800);
-      font-weight: 600;
-      font-size: 11.5px;
-      letter-spacing: 0.02em;
-    }
-    .refs-table td {
-      height: 36px;
-      color: var(--text-muted);
-    }
-    .refs-table td:first-child {
-      width: 32px;
-      text-align: center;
-      font-weight: 600;
-      color: var(--ink-700);
-      background: var(--grey-25);
+    .check-list li:has(input:checked) label {
+      text-decoration: line-through;
+      text-decoration-thickness: 1px;
+      opacity: 0.85;
     }
     .prep-close {
       margin: 18px 0 0;
@@ -901,7 +842,7 @@
         </div>
         <div class="prep-turnaround" role="note">Typical turnaround<br /><strong>1–2 business days</strong><br />once you’re ready</div>
       </div>
-      <p class="prep-how"><strong>How to use:</strong> Follow sections <strong>1–6</strong>. Add the Sunlight bank-statements item only if Sunlight is selected.</p>
+      <p class="prep-how"><strong>How to use:</strong> This is a checklist only — nothing to type. Check each item once you <strong>have it ready</strong>. Follow sections <strong>1–6</strong>. Add the Sunlight item only if Sunlight is selected.</p>
 
       <div class="prep-sections">
         <div class="prep-block">
@@ -934,35 +875,12 @@
 
         <div class="prep-block">
           <h3><span class="n" aria-hidden="true">4</span> Three trade references (street address required) — suppliers first</h3>
-          <p class="prep-note">List <strong>suppliers first</strong>. Add your bank only if you do not have enough suppliers. For each reference, collect all six fields below.</p>
+          <p class="prep-note">Have <strong>three</strong> ready. Prefer <strong>suppliers</strong>; add your bank only if you don’t have enough suppliers. Each needs: company name, account number, contact person, email, phone, and <strong>street address</strong>.</p>
           <ul class="check-list">
-            <li><label><input type="checkbox" /> Company name</label></li>
-            <li><label><input type="checkbox" /> Account number</label></li>
-            <li><label><input type="checkbox" /> Contact person</label></li>
-            <li><label><input type="checkbox" /> Contact email</label></li>
-            <li><label><input type="checkbox" /> Contact phone</label></li>
-            <li><label><input type="checkbox" /> <strong>Street address of that business</strong></label></li>
+            <li><label><input type="checkbox" /> Trade reference 1 ready (all six details)</label></li>
+            <li><label><input type="checkbox" /> Trade reference 2 ready (all six details)</label></li>
+            <li><label><input type="checkbox" /> Trade reference 3 ready (all six details)</label></li>
           </ul>
-          <div class="refs-table-wrap" role="region" aria-label="Trade references table">
-            <table class="refs-table">
-              <thead>
-                <tr>
-                  <th scope="col">#</th>
-                  <th scope="col">Company</th>
-                  <th scope="col">Account #</th>
-                  <th scope="col">Contact</th>
-                  <th scope="col">Email</th>
-                  <th scope="col">Phone</th>
-                  <th scope="col">Street address</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr><td>1</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-                <tr><td>2</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-                <tr><td>3</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-              </tbody>
-            </table>
-          </div>
         </div>
 
         <div class="prep-block">
@@ -978,9 +896,10 @@
 
         <div class="prep-block">
           <h3><span class="n" aria-hidden="true">6</span> Dealer fee</h3>
-          <p class="fee-prompt">What is the highest dealer fee (%) you can handle?</p>
-          <p class="prep-note">Write your answer here as a percent (e.g. 8%):</p>
-          <input class="fee-line" type="text" inputmode="decimal" placeholder="e.g. 8%" aria-label="Highest dealer fee as a percent" />
+          <p class="prep-note">You’ll enter this in the application as a <strong>percent</strong> (not dollars).</p>
+          <ul class="check-list">
+            <li><label><input type="checkbox" /> I know the highest dealer fee (%) I can handle</label></li>
+          </ul>
         </div>
 
         <div class="prep-block sunlight">
