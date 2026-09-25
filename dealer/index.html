@@ -276,6 +276,19 @@
     .gate h2 { color: var(--finti-blue-800); }
     .gate p { color: var(--finti-blue-800); }
 
+    .lender {
+      background: #F7F4EC;
+      border: 1.5px solid #E4D7B0;
+      border-left: 4px solid var(--amber-500);
+    }
+    .lender .callout-icon {
+      background: var(--finti-charcoal);
+      border: 1px solid var(--finti-charcoal);
+      color: var(--amber-400);
+    }
+    .lender h2 { color: var(--finti-charcoal); }
+    .lender p { color: var(--ink-700); }
+
     .purpose {
       background: var(--surface-card);
       border: 1px solid var(--border-subtle);
@@ -821,6 +834,17 @@
       <div>
         <h2>One important timing note</h2>
         <p>Activation waits until <strong>every lender</strong> you applied with has <strong>Approved</strong> or <strong>Declined</strong>. We don’t move to rates, setup, or Live on a partial set — that keeps everything clean and ready when you go live.</p>
+      </div>
+    </aside>
+
+    <aside class="callout lender" role="note" aria-label="Already with a lender">
+      <div class="callout-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none"><rect x="3" y="5" width="18" height="14" rx="2" stroke="currentColor" stroke-width="2"/><circle cx="9" cy="12" r="2.25" stroke="currentColor" stroke-width="2"/><path d="M14 10.5h4M14 13.5h3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </div>
+      <div>
+        <h2>Already with a lender?</h2>
+        <p>Even if you’re <strong>already approved</strong> and <strong>actively using</strong> a lender we’re applying for, we still have to apply and get a <strong>new dealer ID</strong> for your company. That new ID is what lets you use that lender <strong>through the Finti platform</strong>.</p>
+        <p>Your existing direct relationship with the lender doesn’t carry over to Finti.</p>
       </div>
     </aside>
 
