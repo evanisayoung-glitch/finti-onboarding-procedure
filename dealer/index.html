@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Your Path to Going Live with Finti</title>
+  <meta name="description" content="A simple guide for dealers — from your Finti application to Live." />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    /* getfinti.com design-system tokens (sampled live 2026-09-24) */
+    :root {
+      --finti-blue-50:#F1F6FE;
+      --finti-blue-100:#DCE8FE;
+      --finti-blue-200:#B9D0FC;
+      --finti-blue-400:#5090F8;
+      --finti-blue-500:#2B70F8;
+      --finti-blue-600:#2060E0;
+      --finti-blue-700:#1A54CC;
+      --finti-blue-800:#1746A8;
+
+      --finti-charcoal:#212121;
+      --ink-900:#1A1D21;
+      --ink-700:#3F4650;
+      --ink-500:#7A828E;
+      --ink-400:#A8AFBA;
+
+      --white:#FFFFFF;
+      --grey-25:#FAFBFC;
+      --grey-50:#F5F5F7;
+      --grey-100:#EFF1F4;
+      --grey-200:#E4E7EC;
+      --grey-300:#D0D5DD;
+      --slate-300:#B0BAC9;
+
+      --amber-400:#F8B820;
+      --amber-500:#E5A50C;
+      --amber-50:#FFF8E6;
+      --amber-border:#F5D78A;
+      --green-500:#28B865;
+      --green-50:#E6F7EE;
+      --red-500:#E5484D;
+      --red-50:#FDECEC;
+
+      --brand-primary:var(--finti-blue-500);
+      --brand-primary-hover:var(--finti-blue-600);
+      --brand-ink:var(--finti-charcoal);
+      --bg-app:var(--grey-50);
+      --surface-card:var(--white);
+      --border-subtle:var(--grey-200);
+      --border-strong:var(--grey-300);
+      --text-heading:var(--ink-900);
+      --text-body:var(--ink-700);
+      --text-muted:var(--ink-500);
+      --text-on-brand:var(--white);
+      --focus-ring:0 0 0 3px var(--finti-blue-100);
+      --gradient-brand-hero:linear-gradient(120deg,var(--finti-blue-500) 0%,var(--finti-blue-400) 55%, #7AB0FF 100%);
+      --gradient-nav:linear-gradient(180deg,var(--finti-blue-500) 0%,var(--finti-blue-700) 100%);
+
+      --font-brand:"Poppins",system-ui,-apple-system,"Segoe UI",sans-serif;
+      --font-ui:"Inter",system-ui,-apple-system,"Segoe UI",sans-serif;
+
+      --radius-sm:6px;
+      --radius-md:8px;
+      --radius-lg:10px;
+      --radius-xl:12px;
+      --radius-2xl:16px;
+      --radius-pill:999px;
+
+      --content-max:920px;
+      --tap:44px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+
+    body {
+      margin: 0;
+      font-family: var(--font-ui);
+      font-size: 16px;
+      line-height: 1.55;
+      color: var(--text-body);
+      background: var(--bg-app);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { color: var(--brand-primary); }
+    a:focus-visible, button:focus-visible {
+      outline: none;
+      box-shadow: var(--focus-ring);
+      border-radius: 4px;
+    }
+
+    .skip {
+      position: absolute;
+      left: -9999px;
+      top: 0;
+      background: var(--brand-primary);
+      color: var(--text-on-brand);
+      padding: 12px 16px;
+      z-index: 100;
+      font-weight: 600;
+    }
+    .skip:focus { left: 12px; top: 12px; }
+
+    .topbar {
+      background: var(--gradient-nav);
+      color: var(--text-on-brand);
+      padding: 14px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .topbar-brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .topbar-brand img {
+      height: 32px;
+      width: auto;
+      display: block;
+      object-fit: contain;
+    }
+    .topbar-meta {
+      font-size: 12px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      opacity: 0.9;
+      font-weight: 600;
+    }
+
+    .hero {
+      background: var(--gradient-brand-hero);
+      color: var(--text-on-brand);
+      padding: 48px 24px 56px;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: auto -10% -40% 40%;
+      height: 280px;
+      background: radial-gradient(circle, rgba(255,255,255,.18) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero-inner {
+      max-width: var(--content-max);
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      background: rgba(255,255,255,.16);
+      border: 1px solid rgba(255,255,255,.28);
+      padding: 6px 12px;
+      border-radius: var(--radius-pill);
+      margin-bottom: 18px;
+    }
+    .hero h1 {
+      font-family: var(--font-brand);
+      font-size: clamp(28px, 5vw, 40px);
+      font-weight: 700;
+      line-height: 1.12;
+      letter-spacing: -0.02em;
+      margin: 0 0 12px;
+      color: var(--text-on-brand);
+    }
+    .hero-lead {
+      font-size: 17px;
+      line-height: 1.55;
+      max-width: 58ch;
+      margin: 0 0 28px;
+      opacity: 0.95;
+    }
+    .hero-stats {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .stat {
+      background: rgba(255,255,255,.14);
+      border: 1px solid rgba(255,255,255,.22);
+      backdrop-filter: blur(6px);
+      border-radius: var(--radius-xl);
+      padding: 12px 16px;
+      min-width: 140px;
+    }
+    .stat strong {
+      display: block;
+      font-family: var(--font-brand);
+      font-size: 20px;
+      font-weight: 700;
+      line-height: 1.1;
+    }
+    .stat span {
+      font-size: 12px;
+      opacity: 0.9;
+    }
+
+    main {
+      max-width: var(--content-max);
+      margin: -28px auto 0;
+      padding: 0 24px 64px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .callout {
+      border-radius: var(--radius-xl);
+      padding: 18px 20px;
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 14px;
+      align-items: start;
+      box-shadow: 0 8px 24px rgba(26,29,33,.06);
+      margin-bottom: 16px;
+    }
+    .callout-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      background: var(--white);
+      display: grid;
+      place-items: center;
+      flex-shrink: 0;
+    }
+    .callout-icon svg { width: 22px; height: 22px; }
+    .callout h2 {
+      font-family: var(--font-brand);
+      font-size: 15px;
+      font-weight: 700;
+      margin: 0 0 4px;
+      letter-spacing: 0.02em;
+    }
+    .callout p {
+      margin: 0;
+      font-size: 14.5px;
+      line-height: 1.5;
+    }
+    .callout p + p { margin-top: 8px; }
+
+    .docs {
+      background: var(--amber-50);
+      border: 1.5px solid var(--amber-border);
+      border-left: 4px solid var(--amber-500);
+    }
+    .docs .callout-icon { border: 1px solid var(--amber-border); color: var(--amber-500); }
+    .docs h2 { color: #8A6400; }
+    .docs p { color: #5C4A10; }
+
+    .gate {
+      background: var(--finti-blue-50);
+      border: 1.5px solid var(--finti-blue-200);
+      border-left: 4px solid var(--finti-blue-500);
+    }
+    .gate .callout-icon { border: 1px solid var(--finti-blue-200); color: var(--finti-blue-600); }
+    .gate h2 { color: var(--finti-blue-800); }
+    .gate p { color: var(--finti-blue-800); }
+
+    .purpose {
+      background: var(--surface-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-2xl);
+      padding: 22px 24px;
+      margin: 16px 0 32px;
+      box-shadow: 0 4px 16px rgba(26,29,33,.04);
+    }
+    .purpose .label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--brand-primary);
+      margin-bottom: 6px;
+    }
+    .purpose p {
+      margin: 0;
+      color: var(--text-heading);
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 1.5;
+    }
+
+    .section-title {
+      font-family: var(--font-brand);
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--text-heading);
+      letter-spacing: -0.015em;
+      margin: 0 0 6px;
+    }
+    .section-sub {
+      margin: 0 0 22px;
+      color: var(--text-muted);
+      font-size: 14px;
+    }
+
+    .timeline {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+    .timeline::before {
+      content: "";
+      position: absolute;
+      left: 27px;
+      top: 28px;
+      bottom: 28px;
+      width: 2px;
+      background: linear-gradient(180deg, var(--finti-blue-200), var(--grey-200) 70%, var(--green-500));
+    }
+
+    .step {
+      position: relative;
+      display: grid;
+      grid-template-columns: 56px 1fr;
+      gap: 14px;
+      align-items: stretch;
+    }
+    .step-num {
+      width: 56px;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      padding-top: 18px;
+      position: relative;
+      z-index: 1;
+    }
+    .step-num span {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: var(--brand-primary);
+      color: var(--text-on-brand);
+      font-family: var(--font-brand);
+      font-weight: 700;
+      font-size: 15px;
+      display: grid;
+      place-items: center;
+      box-shadow: 0 0 0 4px var(--bg-app), 0 4px 12px rgba(43,112,248,.35);
+    }
+    .step.is-highlight .step-num span {
+      background: var(--amber-500);
+      box-shadow: 0 0 0 4px var(--bg-app), 0 4px 12px rgba(229,165,12,.35);
+    }
+    .step.is-gate .step-num span {
+      background: var(--finti-blue-700);
+      box-shadow: 0 0 0 4px var(--bg-app), 0 4px 12px rgba(26,84,204,.35);
+    }
+    .step.is-live .step-num span {
+      background: var(--green-500);
+      box-shadow: 0 0 0 4px var(--bg-app), 0 4px 12px rgba(40,184,101,.35);
+    }
+
+    .step-card {
+      background: var(--surface-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-2xl);
+      padding: 18px 20px;
+      transition: border-color 180ms ease, box-shadow 180ms ease, transform 180ms ease;
+      box-shadow: 0 2px 8px rgba(26,29,33,.03);
+    }
+    .step-card:hover {
+      border-color: var(--finti-blue-200);
+      box-shadow: 0 8px 24px rgba(43,112,248,.08);
+      transform: translateY(-1px);
+    }
+    .step.is-highlight .step-card {
+      border-color: var(--amber-border);
+      background: linear-gradient(180deg, #FFFCF5 0%, var(--white) 100%);
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .step-card:hover { transform: none; }
+    }
+    .step-head {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 8px;
+    }
+    .step-head h3 {
+      font-family: var(--font-brand);
+      font-size: 17px;
+      font-weight: 600;
+      color: var(--text-heading);
+      margin: 0;
+      letter-spacing: -0.01em;
+      flex: 1 1 auto;
+      min-width: 160px;
+    }
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--finti-blue-700);
+      background: var(--finti-blue-50);
+      border: 1px solid var(--finti-blue-100);
+      padding: 5px 10px;
+      border-radius: var(--radius-pill);
+      white-space: nowrap;
+    }
+    .badge svg { width: 14px; height: 14px; flex-shrink: 0; }
+    .step.is-highlight .badge {
+      color: #8A6400;
+      background: var(--amber-50);
+      border-color: var(--amber-border);
+    }
+    .step.is-gate .badge {
+      color: var(--finti-blue-800);
+      background: var(--finti-blue-50);
+      border-color: var(--finti-blue-200);
+    }
+    .step.is-live .badge {
+      color: #0E7A3F;
+      background: var(--green-50);
+      border-color: #B6E7C9;
+    }
+    .step-card p {
+      margin: 0;
+      font-size: 14.5px;
+      color: var(--text-body);
+      line-height: 1.55;
+    }
+    .done {
+      margin-top: 10px;
+      font-size: 13px;
+      color: var(--text-muted);
+      display: flex;
+      gap: 8px;
+      align-items: flex-start;
+    }
+    .done strong {
+      color: var(--ink-700);
+      font-weight: 600;
+    }
+
+    .help {
+      margin-top: 40px;
+      background: var(--surface-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-2xl);
+      padding: 24px;
+      box-shadow: 0 4px 16px rgba(26,29,33,.04);
+    }
+    .help p {
+      margin: 0;
+      color: var(--text-body);
+      font-size: 15px;
+    }
+
+    footer {
+      max-width: var(--content-max);
+      margin: 0 auto;
+      padding: 8px 24px 48px;
+      color: var(--text-muted);
+      font-size: 12.5px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 20px;
+      justify-content: space-between;
+      align-items: center;
+      border-top: 1px solid var(--border-subtle);
+      padding-top: 20px;
+    }
+    footer a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-weight: 500;
+    }
+    footer a:hover { color: var(--brand-primary); }
+
+    @media (max-width: 640px) {
+      .hero { padding: 36px 20px 48px; }
+      main { padding: 0 16px 48px; }
+      .timeline::before { left: 19px; }
+      .step { grid-template-columns: 40px 1fr; gap: 10px; }
+      .step-num { width: 40px; padding-top: 16px; }
+      .step-num span { width: 32px; height: 32px; font-size: 13px; }
+      .step-card { padding: 16px; }
+      .callout { grid-template-columns: 1fr; }
+    }
+
+    @media print {
+      .topbar, .hero::after { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .step-card:hover { transform: none; box-shadow: none; }
+      body { background: white; }
+      main { margin-top: 16px; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip" href="#journey">Skip to journey</a>
+
+  <header class="topbar" role="banner">
+    <div class="topbar-brand">
+      <img src="data:image/png;base64,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" alt="Finti" width="140" height="45" style="height:32px;width:auto;display:block;" />
+    </div>
+    <div class="topbar-meta">For dealers · Your onboarding path</div>
+  </header>
+
+  <section class="hero" aria-labelledby="page-title">
+    <div class="hero-inner">
+      <div class="eyebrow">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"/></svg>
+        From application to Live
+      </div>
+      <h1 id="page-title">Your path to going Live with Finti</h1>
+      <p class="hero-lead">
+        A simple look at what happens after your rep sends your Finti application —
+        through lender review, rates, training, and selling with Finti.
+      </p>
+      <div class="hero-stats" role="list">
+        <div class="stat" role="listitem"><strong>6</strong><span>clear steps</span></div>
+        <div class="stat" role="listitem"><strong>~7–10 days</strong><span>avg lender review</span></div>
+        <div class="stat" role="listitem"><strong>Full set</strong><span>Approve or Decline before Live</span></div>
+      </div>
+    </div>
+  </section>
+
+  <main id="journey">
+    <aside class="callout docs" role="note" aria-label="Documentation reminder">
+      <div class="callout-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M14 2v6h6M8 13h8M8 17h5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <div>
+        <h2>Please upload all required documentation</h2>
+        <p>In the Finti application, please provide <strong>all documentation necessary</strong> for the lenders you selected. Incomplete files slow lender review.</p>
+        <p>Use the <strong>prep checklist</strong> your rep sent (Dealer Application Ready Checklist) so every document and detail your application asks for is ready the first time.</p>
+      </div>
+    </aside>
+
+    <aside class="callout gate" role="note" aria-label="Timing note">
+      <div class="callout-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"/><path d="M12 7v5l3 2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </div>
+      <div>
+        <h2>One important timing note</h2>
+        <p>Activation waits until <strong>every lender</strong> you applied with has <strong>Approved</strong> or <strong>Declined</strong>. We don’t move to rates, setup, or Live on a partial set — that keeps everything clean and ready when you go live.</p>
+      </div>
+    </aside>
+
+    <div class="purpose">
+      <div class="label">What this is</div>
+      <p>Your side of the Finti onboarding journey — what you’ll do, what we’ll handle, and when you’re Live.</p>
+    </div>
+
+    <h2 class="section-title">Your journey</h2>
+    <p class="section-sub">Six steps from first packet to Live. Your rep is with you the whole way.</p>
+
+    <ol class="timeline">
+      <li class="step">
+        <div class="step-num" aria-hidden="true"><span>1</span></div>
+        <article class="step-card">
+          <div class="step-head">
+            <h3>You receive your Finti application</h3>
+            <span class="badge">You + your rep</span>
+          </div>
+          <p>Your Finti rep sends your application and a prep checklist so you know what to gather before you start.</p>
+          <div class="done"><strong>Ready when:</strong> You have the application and the checklist.</div>
+        </article>
+      </li>
+
+      <li class="step is-highlight">
+        <div class="step-num" aria-hidden="true"><span>2</span></div>
+        <article class="step-card">
+          <div class="step-head">
+            <h3>You complete the application &amp; upload documents</h3>
+            <span class="badge">Your key step</span>
+          </div>
+          <p>Fill out the form and upload <strong>every document and detail</strong> the application asks for for the lenders you selected. This is the step that keeps everything on track — incomplete uploads delay lender review.</p>
+          <div class="done"><strong>Ready when:</strong> Nothing is missing for the lenders you chose.</div>
+        </article>
+      </li>
+
+      <li class="step">
+        <div class="step-num" aria-hidden="true"><span>3</span></div>
+        <article class="step-card">
+          <div class="step-head">
+            <h3>We submit your file to lenders</h3>
+            <span class="badge">We handle this</span>
+          </div>
+          <p>Once your application is complete, we submit it to the lenders you selected.</p>
+          <div class="done"><strong>Ready when:</strong> Your file is with those lenders.</div>
+        </article>
+      </li>
+
+      <li class="step">
+        <div class="step-num" aria-hidden="true"><span>4</span></div>
+        <article class="step-card">
+          <div class="step-head">
+            <h3>Lenders review</h3>
+            <span class="badge">~7–10 days avg</span>
+          </div>
+          <p>Lenders typically take about <strong>7–10 days</strong> on average. Timing can vary by lender — we track responses while you wait.</p>
+          <div class="done"><strong>Ready when:</strong> Decisions are coming in.</div>
+        </article>
+      </li>
+
+      <li class="step is-gate">
+        <div class="step-num" aria-hidden="true"><span>5</span></div>
+        <article class="step-card">
+          <div class="step-head">
+            <h3>Full decisions, then rates &amp; setup</h3>
+            <span class="badge">Hard gate · then we set you up</span>
+          </div>
+          <p>We wait until <strong>every</strong> lender you applied with has Approved or Declined. Then we set you up with your approved options, share rate information, you pick your rates, and we load them on your location.</p>
+          <div class="done"><strong>Ready when:</strong> Your approved rates are on your location.</div>
+        </article>
+      </li>
+
+      <li class="step is-live">
+        <div class="step-num" aria-hidden="true"><span>6</span></div>
+        <article class="step-card">
+          <div class="step-head">
+            <h3>Training, then you’re Live</h3>
+            <span class="badge">You’re Live</span>
+          </div>
+          <p>We schedule training on the Finti process and portal. After that, you’re <strong>Live</strong> — ready to sell with Finti.</p>
+          <div class="done"><strong>Ready when:</strong> You’re trained and can originate through Finti.</div>
+        </article>
+      </li>
+    </ol>
+
+    <section class="help" aria-labelledby="help-title">
+      <h2 class="section-title" id="help-title">Questions?</h2>
+      <p class="section-sub" style="margin-bottom:8px">Your Finti rep is your first point of contact.</p>
+      <p>They’ll send the prep checklist, help with the application, and keep you posted as lenders respond. Prefer email? Reach us through <a href="https://getfinti.com">getfinti.com</a>.</p>
+    </section>
+  </main>
+
+  <footer>
+    <div>Finti · <a href="https://getfinti.com">getfinti.com</a> · Dealer onboarding</div>
+    <div>Palette &amp; type from getfinti.com design system</div>
+  </footer>
+</body>
+</html>
