@@ -575,7 +575,7 @@
       <div class="hero-stats" role="list">
         <div class="stat" role="listitem"><strong>10</strong><span>steps end to end</span></div>
         <div class="stat" role="listitem"><strong>~7–10 days</strong><span>avg lender turnaround</span></div>
-        <div class="stat" role="listitem"><strong>Full set</strong><span>Approve or Decline before activate</span></div>
+        <div class="stat" role="listitem"><strong>1 approval</strong><span>unlocks go-live; add more as approved</span></div>
       </div>
     </div>
   </section>
@@ -590,13 +590,13 @@
       </div>
     </aside>
 
-    <aside class="gate" role="note" aria-label="Hard gate">
+    <aside class="gate is-ops" role="note" aria-label="Go-live rule">
       <div class="gate-icon" aria-hidden="true">
-        <svg viewBox="0 0 24 24" fill="none"><path d="M12 9v4m0 4h.01M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <svg viewBox="0 0 24 24" fill="none"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </div>
       <div>
-        <h2>Hard gate</h2>
-        <p>Dealers are <strong>not activated</strong> until every applicable lender has responded — <strong>Approve</strong> or <strong>Decline</strong>. Partial lender approvals do not unlock activation, rate-sheet send, or Live.</p>
+        <h2>Go-live rule (effective 2026-09-29)</h2>
+        <p>Push dealers <strong>Live after the first lender Approves</strong>. Then add the other lenders as they come. <strong>Do not wait</strong> for every applicable lender to respond before go-live, rate sheets, or Live.</p>
       </div>
     </aside>
 
@@ -674,18 +674,18 @@
         </article>
       </li>
 
-      <li class="step is-gate">
+      <li class="step is-live">
         <div class="step-num" aria-hidden="true"><span>5</span></div>
         <article class="step-card">
           <div class="step-head">
-            <h3>Full lender response set</h3>
+            <h3>First lender approval unlocks go-live</h3>
             <span class="owner">
-              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 9v4m0 4h.01M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-              MoM · Gate
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              MoM · Go-live
             </span>
           </div>
-          <p>Lenders may approve at different times. <strong>Do not activate</strong> until every applicable lender has responded in the affirmative or with a decline.</p>
-          <div class="done"><strong>Done when:</strong> Response set is complete (every lender = Approve or Decline). Partial approvals stay parked.</div>
+          <p>Lenders may approve at different times. As soon as <strong>one</strong> applicable lender <strong>Approves</strong>, move forward — rate sheets, setup, and Live. <strong>Do not wait</strong> for the rest of the lender set.</p>
+          <div class="done"><strong>Done when:</strong> At least one applicable lender has Approved. Remaining lenders stay tracked and are added as they Approve.</div>
         </article>
       </li>
 
@@ -699,8 +699,8 @@
               MoM · Brittany C
             </span>
           </div>
-          <p>All <strong>approved</strong> lenders are added to the dealer location. <strong>Brittany C</strong> sends rate sheets for those lenders.</p>
-          <div class="done"><strong>Done when:</strong> Approved lenders are on the location and rate sheets are with the dealer.</div>
+          <p>Add each <strong>Approved</strong> lender to the dealer location as the approval arrives (starting with the first). <strong>Brittany C</strong> sends rate sheets for that lender. Repeat for later approvals — do not batch-wait.</p>
+          <div class="done"><strong>Done when:</strong> The first approved lender is on the location with rate sheets out; later approvals are added the same way when they land.</div>
         </article>
       </li>
 
@@ -771,7 +771,7 @@
       <p class="section-sub" style="margin-bottom:0">Quick map for reps and corporate.</p>
       <div class="owners-grid">
         <div class="owner-tile"><strong>Finti Rep</strong><span>Packet out · dealer support through submit-ready</span></div>
-        <div class="owner-tile"><strong>MoM</strong><span>Submit · track · gate · add company users + Live · no Friday activations for now</span></div>
+        <div class="owner-tile"><strong>MoM</strong><span>Submit · track · go live after first approval · add remaining lenders as approved · company users + Live · no Friday activations for now</span></div>
         <div class="owner-tile"><strong>Brittany C</strong><span>Rate sheets · upload rates with Evan</span></div>
         <div class="owner-tile"><strong>Evan &amp; Shawn</strong><span>Portal + process training with dealer</span></div>
         <div class="owner-tile"><strong>Dealer</strong><span>Complete app · pick rates · attend training</span></div>
