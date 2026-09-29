@@ -485,6 +485,44 @@
       color: var(--text-body);
       line-height: 1.55;
     }
+    .step-card p + p { margin-top: 8px; }
+    .step-card ol {
+      margin: 10px 0 0;
+      padding-left: 1.25em;
+      font-size: 14.5px;
+      color: var(--text-body);
+      line-height: 1.5;
+    }
+    .step-card ol li + li { margin-top: 4px; }
+    .cannot-upload {
+      margin-top: 12px;
+      padding: 10px 12px;
+      background: var(--amber-50);
+      border: 1px solid var(--amber-border);
+      border-radius: var(--radius-lg);
+      font-size: 14px;
+      line-height: 1.5;
+      color: var(--text-body);
+    }
+    .cannot-upload strong { color: var(--text-heading); }
+    .example-email {
+      margin: 14px 0 2px;
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      background: var(--grey-25);
+    }
+    .example-email img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+    .example-email figcaption {
+      padding: 10px 12px 12px;
+      font-size: 12.5px;
+      color: var(--text-muted);
+      line-height: 1.45;
+    }
     .done {
       margin-top: 10px;
       font-size: 13px;
@@ -757,7 +795,7 @@
 
   <header class="topbar" role="banner">
     <div class="topbar-brand">
-      <img src="data:image/png;base64,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" alt="Finti" width="140" height="45" style="height:32px;width:auto;display:block;" />
+      <img src="data:image/png;base64,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" alt="Finti" width="140" height="45" style="height:32px;width:auto;display:block;" />
     </div>
     <div class="topbar-meta">For dealers · Your onboarding path</div>
   </header>
@@ -892,6 +930,7 @@
             <li><label><input type="checkbox" /> Contractor license registration</label></li>
             <li><label><input type="checkbox" /> Sales agreement</label></li>
           </ul>
+          <p class="prep-note" style="margin-top:10px;margin-bottom:0">Have a voided check ready for the Finti application. If Service Finance is one of your lenders, they will <strong>also email you separately</strong> after we submit — that email asks for a voided check plus a signed page 58 from their training deck. Only you (or your office contact) can send those to Service Finance.</p>
         </div>
 
         <div class="prep-block">
@@ -963,7 +1002,18 @@
             <span class="badge">~7–10 days avg</span>
           </div>
           <p>Lenders typically take about <strong>7–10 days</strong> on average. Timing can vary by lender — we track responses while you wait.</p>
-          <div class="done"><strong>Ready when:</strong> Decisions are coming in.</div>
+          <p>If Service Finance (SFC) is one of your lenders, they start review by emailing you from <strong>enroll</strong> — usually a Dealer Enrollment Representative (the example below is from Ryan Gibbard). <strong>Every dealer applying with SFC gets this email.</strong> It is the normal kickoff, not a problem with your file.</p>
+          <p>SFC will ask you to:</p>
+          <ol>
+            <li>Send a copy of a <strong>voided check</strong></li>
+            <li>Review the attached training PowerPoint, then <strong>sign and return page 58</strong></li>
+          </ol>
+          <div class="cannot-upload"><strong>Finti cannot upload those items for you</strong> in the SFC portal. You (or your office contact) complete them yourselves and reply to SFC. Your Finti rep can walk you through it — they cannot file the documents in SFC’s system.</div>
+          <figure class="example-email">
+            <img src="../sfc-review-email.svg" alt="Real Service Finance enrollment email from enroll asking for a voided check and a signed page 58 from the attached training PowerPoint" width="1320" height="2288" />
+            <figcaption>Real SFC review kickoff (from enroll). Subject lines include your Finti / company name. Yours will look like this.</figcaption>
+          </figure>
+          <div class="done"><strong>Ready when:</strong> Decisions are coming in, and any SFC email items you received are on their way back to SFC.</div>
         </article>
       </li>
 
